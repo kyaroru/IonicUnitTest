@@ -1,0 +1,16 @@
+<ion-view view-title="Main">
+  <ion-content class="padding">
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="Username" ng-model="mc.username">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Password" ng-model="mc.password">
+      </label>
+    </div>
+
+    <button class="button button-block button-positive" ng-click="mc.doLogin()">
+      Login
+    </button>
+  </ion-content>
+</ion-view>

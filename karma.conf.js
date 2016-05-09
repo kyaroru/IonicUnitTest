@@ -40,19 +40,21 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'www/js/**/*.js': ['coverage']
     },
 
     plugins: [
       'karma-jasmine',
       'karma-mocha-reporter',
       'karma-phantomjs-launcher',
-      'karma-chrome-launcher'
+      'karma-chrome-launcher',
+      'karma-coverage'
     ],
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['mocha'],
+    reporters: ['mocha','coverage'],
 
     // reporter options
     mochaReporter: {
@@ -62,6 +64,11 @@ module.exports = function(config) {
         warning: 'orange',
         error: 'red'
       }
+    },
+
+    coverageReporter : {
+      type : 'cobertura',
+      dir  : 'target/coverage-reports/'
     },
 
     // web server port
@@ -83,7 +90,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],//PhantomJS
+    browsers: ['Chrome','PhantomJS'],//PhantomJS
 
 
     // Continuous Integration mode

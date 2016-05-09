@@ -58,14 +58,14 @@ module.exports = function(config) {
     reporters: ['progress', 'junit', 'coverage'],
 
     coverageReporter : {
-      type : 'html',
+      type : 'cobertura',
       dir  : 'target/coverage-reports/'
     },
 
     // saves report at `target/surefire-reports/TEST-*.xml` because Jenkins
     // looks for this location and file prefix by default.
     junitReporter    : {
-      outputFile : 'target/surefire-reports/TEST-karma-results.xml'
+      outputFile : 'target/surefire-reports/TEST-results.xml'
     },
 
     // web server port

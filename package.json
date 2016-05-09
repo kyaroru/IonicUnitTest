@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "description": "Karma: An Ionic project",
   "scripts": {
-    "test": "karma start karma.conf.js"
+    "test": "karma start karma.jenkins.conf.js"
   },
   "dependencies": {
     "gulp": "^3.5.6",
@@ -18,7 +18,9 @@
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
     "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
     "karma-jasmine": "^1.0.2",
+    "karma-junit-reporter": "^1.0.0",
     "karma-mocha-reporter": "^2.0.3",
     "karma-phantomjs-launcher": "^1.0.0",
     "phantomjs-prebuilt": "^2.1.7",

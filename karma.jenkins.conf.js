@@ -33,35 +33,39 @@ module.exports = function(config) {
       'tests/unit/*.spec.js'
     ],
 
+
     // list of files to exclude
     exclude: [
     ],
 
+
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'www/js/**/*.js': ['coverage']
     },
 
     plugins: [
       'karma-jasmine',
-      'karma-mocha-reporter',
       'karma-phantomjs-launcher',
-      'karma-chrome-launcher'
+      'karma-junit-reporter',
+      'karma-coverage'
     ],
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['mocha'],
+    reporters: ['progress', 'junit', 'coverage'],
 
-    // reporter options
-    mochaReporter: {
-      colors: {
-        success: 'green',
-        info: 'cyan',
-        warning: 'orange',
-        error: 'red'
-      }
+    coverageReporter : {
+      type : 'html',
+      dir  : 'target/coverage-reports/'
+    },
+
+    // saves report at `target/surefire-reports/TEST-*.xml` because Jenkins
+    // looks for this location and file prefix by default.
+    junitReporter    : {
+      outputFile : 'target/surefire-reports/TEST-karma-results.xml'
     },
 
     // web server port
@@ -83,12 +87,12 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],//PhantomJS
+    browsers: ['PhantomJS'],//PhantomJS
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous

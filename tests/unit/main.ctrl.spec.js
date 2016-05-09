@@ -1,4 +1,4 @@
-describe('Test Cases for MainCtrl', function() {
+describe('MainCtrl', function() {
     var scope,controller;
 
     // TODO: Load the App Module

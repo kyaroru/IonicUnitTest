@@ -50,13 +50,12 @@ module.exports = function(config) {
       'karma-phantomjs-launcher',
       'karma-junit-reporter',
       'karma-coverage',
-      'karma-jenkins-reporter'
     ],
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'jenkins', 'coverage'],
+    reporters: ['progress', 'junit', 'coverage'],
 
     coverageReporter : {
       type : 'cobertura',
@@ -65,14 +64,10 @@ module.exports = function(config) {
 
     // saves report at `target/surefire-reports/TEST-*.xml` because Jenkins
     // looks for this location and file prefix by default.
-    // junitReporter    : {
-    //   outputFile : 'target/surefire-reports/TEST-results.xml'
-    // },
-
-    jenkinsReporter: {
-      outputFile: 'test-results.xml',
-      suite: 'karma',                 // this will be mapped to the package
-      classnameSuffix: 'browser-test'
+    //outputFile : 'target/surefire-reports/TEST-results.xml'
+    junitReporter    : {
+      outputDir: 'target/surefire-reports',
+      outputFile: undefined,
     },
 
     // web server port

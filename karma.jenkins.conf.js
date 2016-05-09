@@ -72,7 +72,7 @@ module.exports = function(config) {
       outputFile: 'test-results.xml',
       suite: 'karma',                 // this will be mapped to the package
       classnameSuffix: 'browser-test'
-    }
+    },
 
     // web server port
     port: 9876,

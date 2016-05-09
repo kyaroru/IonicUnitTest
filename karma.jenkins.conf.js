@@ -49,7 +49,8 @@ module.exports = function(config) {
       'karma-jasmine',
       'karma-phantomjs-launcher',
       'karma-junit-reporter',
-      'karma-coverage'
+      'karma-coverage',
+      'karma-jenkins-reporter'
     ],
 
     // test results reporter to use

@@ -43,7 +43,7 @@ describe('MainCtrl', function() {
         spyOn(controller, 'doLogin').and.callThrough();
         controller.doLogin();
         expect(controller.doLogin).toHaveBeenCalled();
-      })
+      });
 
     });
 

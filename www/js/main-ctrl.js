@@ -11,6 +11,7 @@
 
       //function declaration
       self.doLogin = doLogin;
+      self.showPopup = showPopup;
 
       function doLogin(){
       //  console.log("Login for " + self.username + " " + self.password);
@@ -20,16 +21,16 @@
           });
         }
         else {
-          showPopup("Error","Username or password is invalid");
+          self.showPopup("Error","Username or password is invalid");
         }
       }
 
       function showPopup(title,content) {
-       var alertPopup = $ionicPopup.alert({
-         title: title,
-         template: '<div>'+content+'</div>'
-       });
-     };
+         var alertPopup = $ionicPopup.alert({
+           title: title,
+           template: '<div>'+content+'</div>'
+         });
+      }
   }]);
 
 })();

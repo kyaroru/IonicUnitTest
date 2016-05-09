@@ -55,13 +55,13 @@ describe('MainCtrl', function() {
 
       it('should assign password from "1234" to "123"', function(){
         expect(controller.password).toEqual('123');
-      })
+      });
 
       it('should call doLogin() function and fail', function(){
         spyOn(controller, 'doLogin').and.callThrough();
         controller.doLogin();
         expect(controller.doLogin).toHaveBeenCalled();
-      })
+      });
 
     });
 

@@ -55,7 +55,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'junit', 'coverage'],
+    reporters: ['progress', 'jenkins', 'coverage'],
 
     coverageReporter : {
       type : 'cobertura',
@@ -64,9 +64,15 @@ module.exports = function(config) {
 
     // saves report at `target/surefire-reports/TEST-*.xml` because Jenkins
     // looks for this location and file prefix by default.
-    junitReporter    : {
-      outputFile : 'target/surefire-reports/TEST-results.xml'
-    },
+    // junitReporter    : {
+    //   outputFile : 'target/surefire-reports/TEST-results.xml'
+    // },
+
+    jenkinsReporter: {
+      outputFile: 'test-results.xml',
+      suite: 'karma',                 // this will be mapped to the package
+      classnameSuffix: 'browser-test'
+    }
 
     // web server port
     port: 9876,

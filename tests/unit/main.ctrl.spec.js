@@ -12,22 +12,39 @@ describe('Test Cases for MainCtrl', function() {
 
     describe('- Initialization', function() {
       it('should have a scope variable', function() {
-          expect(scope).toBeDefined();
+        expect(scope).toBeDefined();
       });
+
+      it('should have controller initialized', function() {
+        expect(controller).toBeDefined();
+      })
 
       it('should assign username and password', function(){
-        expect(scope.mc.username).toEqual("user");
-        expect(scope.mc.password).toEqual("1234");
+        expect(controller.username).toEqual("user");
+        expect(controller.password).toEqual("1234");
       });
+
+      it('should have doLogin() function',function() {
+        expect(controller.doLogin).toBeDefined();
+      })
     });
 
-    describe('- Method doLogin()', function() {
+    describe('- Method doLogin() with invalid username', function() {
+      //for every spec, it will initialized username to "user1"
+      beforeEach(function(){
+        controller.username = "user1";
+      });
 
+      it('should assign username from "user" to "user1"', function(){
+        expect(controller.username).toEqual('user1');
+      })
 
-      // it('should call doLogin() method', function(){
-      //   scope.mc.doLogin();
-      //   expect(scope.mc.doLogin).toHaveBeenCalledWith("user","1234");
-      // });
+      it('should call doLogin() function and fail', function(){
+        spyOn(controller, 'doLogin').and.callThrough();
+        controller.doLogin();
+        expect(controller.doLogin).toHaveBeenCalled();
+      })
+
     });
 
 

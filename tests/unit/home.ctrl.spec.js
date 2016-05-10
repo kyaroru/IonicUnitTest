@@ -1,4 +1,4 @@
-describe('MainCtrl', function() {
+describe('HomeCtrl', function() {
     var scope,controller,stateParams;
 
     // TODO: Load the App Module
@@ -25,6 +25,10 @@ describe('MainCtrl', function() {
 
       it('should have name value in stateParams', function(){
         expect(stateParams.name).toEqual('user');
+      });
+
+      it('should assign name with stateParams.name', function(){
+        expect(controller.name).toEqual(stateParams.name);
       });
 
     });

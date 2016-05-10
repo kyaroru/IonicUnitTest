@@ -7,8 +7,8 @@
       //variables
       var self = this;
       self.name = $stateParams.name;
-      
-      //function declaration
+
+      //function declaration...
 
 
   }]);

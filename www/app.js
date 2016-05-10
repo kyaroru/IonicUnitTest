@@ -8,8 +8,8 @@
 angular.module('app', [
   'ionic',
   'main.ctrl',
-  'home.ctrl'
-
+  'home.ctrl',
+  'home.service'
 ])
 
 .run(function($ionicPlatform) {
@@ -34,7 +34,7 @@ angular.module('app', [
 
     .state('main', {
       url: '/',
-      templateUrl: 'templates/main.html',
+      templateUrl: 'js/main/main.html',
       controller: 'MainCtrl as mc'
     })
 
@@ -43,7 +43,7 @@ angular.module('app', [
       params: {
           name: null
       },
-      templateUrl: 'templates/home.html',
+      templateUrl: 'js/home/home.html',
       controller: 'HomeCtrl as hc'
     })
 

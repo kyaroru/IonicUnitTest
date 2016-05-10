@@ -1,0 +1,22 @@
+<ion-view view-title="Home">
+  <ion-nav-buttons side="secondary">
+  <button class="button button-positive button-clear" ng-click="hc.showAddItemModal()">
+    Add
+  </button>
+</ion-nav-buttons>
+
+  <ion-content class="padding">
+    Welcome {{hc.name}}
+
+    <ion-list>
+      <ion-item ng-repeat="item in hc.items">
+        <h2>{{item.title}}</h2>
+        <p>{{item.content}}</p>
+        <ion-option-button class="button-assertive"
+                        ng-click="hc.deleteItem(item)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

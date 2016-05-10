@@ -32,7 +32,7 @@ describe('MainCtrl', function() {
       })
     });
 
-    describe('- doLogin() with valid username & password', function() {
+    describe('- login with valid username & password', function() {
       beforeEach(inject(function(){
         spyOn(controller, 'doLogin').and.callThrough();
         spyOn(state, 'go')
@@ -47,7 +47,7 @@ describe('MainCtrl', function() {
         expect(state.go).toHaveBeenCalledWith('home', { name: 'user' });
       });
     });
-    // 
+    //
     // describe('- doLogin() with invalid username', function() {
     //   //for every spec, it will initialized username to "user1"
     //   beforeEach(function(){

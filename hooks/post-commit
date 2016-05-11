@@ -1,2 +1,0 @@
-#!/bin/sh
-curl http://localhost:8080/git/notifyCommit?url=https://github.com/kyaroru/Karma.git

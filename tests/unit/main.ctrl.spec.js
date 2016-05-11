@@ -29,7 +29,7 @@ describe('MainCtrl', function() {
 
       it('should have doLogin() function',function() {
         expect(controller.doLogin).toBeDefined();
-      })
+      });
     });
 
     describe('- login with valid username & password', function() {

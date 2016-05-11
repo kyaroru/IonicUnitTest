@@ -48,7 +48,7 @@ describe('MainCtrl', function() {
       });
     });
 
-    describe('- doLogin() with invalid username', function() {
+    describe('- login with invalid username', function() {
       //for every spec, it will initialized username to "user1"
       beforeEach(function(){
         controller.username = "user1";
@@ -71,7 +71,7 @@ describe('MainCtrl', function() {
 
     });
 
-    // describe('- doLogin() with invalid password', function() {
+    // describe('- login with invalid password', function() {
     //   //for every spec, it will initialized password to "123"
     //   beforeEach(function(){
     //     controller.password = "123";

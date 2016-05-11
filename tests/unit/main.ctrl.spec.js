@@ -1,12 +1,12 @@
 describe('MainCtrl', function() {
     var scope,controller,state;
 
-    // Load the App Module
+    // TODO: Load the App Module
     beforeEach(function(){
       module('app');
     });
 
-    // Instantiate the Controller and Mocks
+    // TODO: Instantiate the Controller and Mocks
     beforeEach(inject(function($controller,$rootScope,$state) {
       scope = $rootScope.$new();
       controller = $controller("MainCtrl as mc", { $scope: scope });

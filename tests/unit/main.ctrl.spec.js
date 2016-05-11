@@ -55,41 +55,41 @@ describe('MainCtrl', function() {
 
     });
 
-    // describe('- login with invalid password', function() {
-    //   //for every spec, it will initialized password to "123"
-    //   beforeEach(function(){
-    //     controller.password = "123";
-    //     spyOn(controller, 'doLogin').and.callThrough();
-    //     spyOn(controller, 'showPopup').and.callThrough();
-    //     controller.doLogin();
-    //   });
-    //
-    //   it('should assign password from "1234" to "123"', function(){
-    //     expect(controller.password).toEqual('123');
-    //   });
-    //
-    //   it('should call doLogin() function', function(){
-    //     expect(controller.doLogin).toHaveBeenCalled();
-    //   });
-    //
-    //   it('should call showPopup() function',function(){
-    //     expect(controller.showPopup).toHaveBeenCalledWith("Error","Username or password is invalid");
-    //   });
-    // });
-
-    describe('- login with valid username & password', function() {
-      beforeEach(inject(function(){
+    describe('- login with invalid password', function() {
+      //for every spec, it will initialized password to "123"
+      beforeEach(function(){
+        controller.password = "123";
         spyOn(controller, 'doLogin').and.callThrough();
-        spyOn(state, 'go')
+        spyOn(controller, 'showPopup').and.callThrough();
         controller.doLogin();
-      }));
+      });
+
+      it('should assign password from "1234" to "123"', function(){
+        expect(controller.password).toEqual('123');
+      });
 
       it('should call doLogin() function', function(){
         expect(controller.doLogin).toHaveBeenCalled();
       });
 
-      it('should change state to home',function(){
-        expect(state.go).toHaveBeenCalledWith('home', { name: 'user' });
+      it('should call showPopup() function',function(){
+        expect(controller.showPopup).toHaveBeenCalledWith("Error","Username or password is invalid");
       });
     });
+    //
+    // describe('- login with valid username & password', function() {
+    //   beforeEach(inject(function(){
+    //     spyOn(controller, 'doLogin').and.callThrough();
+    //     spyOn(state, 'go')
+    //     controller.doLogin();
+    //   }));
+    //
+    //   it('should call doLogin() function', function(){
+    //     expect(controller.doLogin).toHaveBeenCalled();
+    //   });
+    //
+    //   it('should change state to home',function(){
+    //     expect(state.go).toHaveBeenCalledWith('home', { name: 'user' });
+    //   });
+    // });
 });

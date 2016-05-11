@@ -20,7 +20,7 @@ describe('MainCtrl', function() {
 
       it('should have controller initialized', function() {
         expect(controller).toBeDefined();
-      })
+      });
 
       it('should assign username and password', function(){
         expect(controller.username).toEqual("user");

@@ -21,7 +21,7 @@ describe('HomeCtrl', function() {
 
       it('should have controller initialized', function() {
         expect(controller).toBeDefined();
-      })
+      });
 
       it('should have name value in stateParams', function(){
         expect(stateParams.name).toEqual('user');

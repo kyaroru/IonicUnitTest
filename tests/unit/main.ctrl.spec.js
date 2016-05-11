@@ -47,7 +47,7 @@ describe('MainCtrl', function() {
         expect(state.go).toHaveBeenCalledWith('home', { name: 'user' });
       });
     });
-    
+
     describe('- doLogin() with invalid username', function() {
       //for every spec, it will initialized username to "user1"
       beforeEach(function(){
@@ -59,7 +59,7 @@ describe('MainCtrl', function() {
 
       it('should assign username from "user" to "user1"', function(){
         expect(controller.username).toEqual('user1');
-      })
+      });
 
       it('should call doLogin() function', function(){
         expect(controller.doLogin).toHaveBeenCalled();

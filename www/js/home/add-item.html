@@ -8,12 +8,12 @@
   <ion-content class="padding">
     <div class="list list-inset">
       <label class="item item-input">
-        <input type="text" placeholder="Title" ng-model="title">
+        <input type="text" placeholder="Title" ng-model="hc.title">
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Content" ng-model="content">
+        <input type="text" placeholder="Content" ng-model="hc.content">
       </label>
     </div>
-    <button class="button button-block button-positive" ng-click="hc.addItem(title,content)">Add</button>
+    <button class="button button-block button-positive" ng-click="hc.addItem(hc.title,hc.content)">Add</button>
   </ion-content>
 </ion-modal-view>

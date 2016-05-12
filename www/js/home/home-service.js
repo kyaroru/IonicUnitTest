@@ -3,7 +3,7 @@
 
   angular
     .module('home.service',[])
-    .factory('HomeService', [function () {
+    .factory('HomeService', ['$filter',function ($filter) {
       var items = [
         {
           id:1,
@@ -28,6 +28,9 @@
       ];
 
       var service = {
+        getCount: function(){
+          return items.length;
+        },
         get: function(id){
           return $filter('filter')(items, {id:id})[0];
         },

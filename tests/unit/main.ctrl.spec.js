@@ -76,20 +76,20 @@ describe('MainCtrl', function() {
         expect(controller.showPopup).toHaveBeenCalledWith("Error","Username or password is invalid");
       });
     });
-    //
-    // describe('- login with valid username & password', function() {
-    //   beforeEach(inject(function(){
-    //     spyOn(controller, 'doLogin').and.callThrough();
-    //     spyOn(state, 'go')
-    //     controller.doLogin();
-    //   }));
-    //
-    //   it('should call doLogin() function', function(){
-    //     expect(controller.doLogin).toHaveBeenCalled();
-    //   });
-    //
-    //   it('should change state to home',function(){
-    //     expect(state.go).toHaveBeenCalledWith('home', { name: 'user' });
-    //   });
-    // });
+    
+    describe('- login with valid username & password', function() {
+      beforeEach(inject(function(){
+        spyOn(controller, 'doLogin').and.callThrough();
+        spyOn(state, 'go')
+        controller.doLogin();
+      }));
+
+      it('should call doLogin() function', function(){
+        expect(controller.doLogin).toHaveBeenCalled();
+      });
+
+      it('should change state to home',function(){
+        expect(state.go).toHaveBeenCalledWith('home', { name: 'user' });
+      });
+    });
 });

@@ -84,9 +84,9 @@ describe('MainCtrl', function() {
         controller.doLogin();
       }));
 
-      // it('should call doLogin() function', function(){
-      //   expect(controller.doLogin).toHaveBeenCalled();
-      // });
+      it('should call doLogin() function', function(){
+        expect(controller.doLogin).toHaveBeenCalled();
+      });
 
       it('should change state to home',function(){
         expect(state.go).toHaveBeenCalledWith('home', { name: 'user' });

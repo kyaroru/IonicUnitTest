@@ -6,7 +6,7 @@ describe('HomeService', function() {
       module('app');
     });
 
-    // TODO: Instantiate the Controller and Mocks
+    // TODO: Instantiate the Service
     beforeEach(inject(function(HomeService) {
       homeService = HomeService;
     }));

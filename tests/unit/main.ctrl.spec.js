@@ -1,16 +1,34 @@
 describe('MainCtrl', function() {
-    var scope,controller,state;
+    var scope,controller,state,sampleService;
 
-    // TODO: Load the App Module
     beforeEach(function(){
+      // Load the App Module
       module('app');
+
+      // Mock a sample service
+      module(function($provide){
+        $provide.factory('SampleService', function() {
+          // Mocking SampleService
+          var items = [1,2,3];
+          var service = {
+            getAll:function(){
+              return items;
+            },
+            delete:function(item){
+              items.splice(item,1);
+            }
+          };
+          return service;
+        });
+      })
     });
 
-    // TODO: Instantiate the Controller and Mocks
-    beforeEach(inject(function($controller,$rootScope,$state) {
+    // Instantiate the Controller and Mocks
+    beforeEach(inject(function($controller,$rootScope,$state,SampleService) {
       scope = $rootScope.$new();
       controller = $controller("MainCtrl as mc", { $scope: scope });
       state = $state;
+      sampleService = SampleService;
     }));
 
     describe('- Initialization', function() {
@@ -90,6 +108,14 @@ describe('MainCtrl', function() {
 
       it('should change state to home',function(){
         expect(state.go).toHaveBeenCalledWith('home', { name: 'user' });
+      });
+    });
+
+    describe(' - Testing SampleService in controller',function(){
+      it('should have items equal to [1,2,3]', function() {
+        spyOn(sampleService, 'getAll').and.callThrough();
+        var items = sampleService.getAll();
+        expect(items).toEqual([1,2,3]);
       });
     });
 });

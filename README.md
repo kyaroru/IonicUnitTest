@@ -8,6 +8,7 @@ Download this [pdf](https://onedrive.live.com/redir?resid=3AB699A7272CA20E!19763
 
 You need to have the following tools install in your system globally:
 - [Node.js](https://nodejs.org/) v4+
+- [Apache Cordova](https://cordova.apache.org/)
 - [Ionic Framework](http://ionic.io/) v1.3
 - [karma-cli](https://github.com/karma-runner/karma-cli)
 - [phantomjs](http://phantomjs.org/)

@@ -2,7 +2,7 @@
 IonicUnitTest is a simple configuration of unit testing on Ionic Apps. It uses Jasmine to describe the tests & Karma as test runner. After all, it can be integrated with Jenkins, the powerful CI tools :p
 
 ### Step by Step Guide
-Download this [pdf](https://onedrive.live.com/redir?resid=3AB699A7272CA20E!19763&authkey=!ALRpcUHWopOvtXw&ithint=file%2cpdf) to view step by step guide on setting up unit test on Ionic app
+Download this [pdf](https://drive.google.com/file/d/0B8sE3YaR1p8DeVZlYkYxU0VGR1U/view?usp=sharing) to view step by step guide on setting up unit test on Ionic app
 
 ### Installation
 
